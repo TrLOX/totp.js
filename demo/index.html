@@ -60,8 +60,7 @@
       var $totp = document.getElementById('totp');
       var $ttl = document.getElementById('ttl');
 
-      var urlParams = new URLSearchParams(window.location.search);
-      var key = urlParams.get(key') || TOTP.randomKey();
+      var key = new URLSearchParams(window.location.search).get(key') || TOTP.randomKey();
       var totp = new TOTP(key);
       var qrnode = new AraleQRCode({
         size: 128,
